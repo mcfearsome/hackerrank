@@ -17,11 +17,10 @@
 #
 # Print the largest Decent Number having N digits; if no such number
 # exists, tell Sherlock by printing -1.
-# 
+#
 # cat sherlock_and_the_beast_input.txt | ruby sherlock_and_the_beast.rb
-t = gets.strip.to_i
-for a0 in (0..t-1)
-    n = gets.strip.to_i
+class DecentNumber
+  def initialize(n)
     fives = (n/3).floor
     fives -= 1 while fives != 0 and (n - (fives*3)) % 5 != 0
     fives *= 3
@@ -34,9 +33,20 @@ for a0 in (0..t-1)
     end
 
     if fives == 0 and threes == 0
-      s = -1
+      num = -1
     else
-      s = "".rjust(fives,"5").ljust(n,"3").to_i
+      num = "".rjust(fives,"5").ljust(n,"3").to_i
     end
-    puts s
+    @value = num
+  end
+
+  def to_s
+    @value.to_s
+  end
+end
+
+t = gets.strip.to_i
+for a0 in (0..t-1)
+    n = gets.strip.to_i
+    puts DecentNumber.new(n)
 end
