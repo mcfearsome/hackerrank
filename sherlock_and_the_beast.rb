@@ -10,11 +10,14 @@
 #
 # The first line is an integer, T, denoting the number of test cases.
 #
-# The T subsequent lines each contain an integer, N, detailing the number of digits in the number.
+# The T subsequent lines each contain an integer, N, detailing the
+# number of digits in the number.
 #
 # Output Format
 #
-# Print the largest Decent Number having N digits; if no such number exists, tell Sherlock by printing -1.
+# Print the largest Decent Number having N digits; if no such number
+# exists, tell Sherlock by printing -1.
+# 
 # cat sherlock_and_the_beast_input.txt | ruby sherlock_and_the_beast.rb
 t = gets.strip.to_i
 for a0 in (0..t-1)
